@@ -469,7 +469,7 @@ static int bcm2835gpio_init(void)
 	}
 
 	/* set 4mA drive strength, slew rate limited, hysteresis on */
-	pads_base[BCM2835_PADS_GPIO_0_27_OFFSET] = 0x5a000008 + 1;
+	pads_base[BCM2835_PADS_GPIO_0_27_OFFSET] = 0x5a000008 + 4; // 10mA drive coz we are terminated and want to go faster
 
 	tdo_gpio_mode = MODE_GPIO(tdo_gpio);
 	tdi_gpio_mode = MODE_GPIO(tdi_gpio);
